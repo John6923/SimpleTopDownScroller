@@ -18,10 +18,16 @@ public class Constants {
 	public static final String DRAGON = "res/dragonFull.png";
 	public static final String PRINCESS = "res/PrincessFull.png";
 	public static final String PLAYER = "res/hero.png";
+	public static final String PLAYER_BACK = "res/heroBack.png";
+	public static final String PLAYER_FRONT = "res/heroFront.png";
 	public static final String[] IMAGE_NAMES = {GRASS, BUSH, KEY, KEY, KEY, KEY, 
 		DOOR, DOOR, DOOR, DOOR, SWORD, SWORD, SWORD, SWORD, 
 		DRAGON, DRAGON, DRAGON, DRAGON, PRINCESS, PRINCESS, PRINCESS, PRINCESS};
-	public static final int PLAYER_X = 9;
+	public static final int PLAYER_X = 13;
 	public static final int PLAYER_Y = 15;
+	public static final int LEFT = 0;
+	public static final int RIGHT = 1;
+	public static final int UP = 2;
+	public static final int DOWN = 3;
 
 }

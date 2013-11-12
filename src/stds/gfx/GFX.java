@@ -23,4 +23,13 @@ public class GFX {
 		return toWriteTo;
 	}
 	
+	public static Image reverseImage(Image img){
+		BufferedImage toWriteTo = new BufferedImage(img.getWidth(null),img.getHeight(null),BufferedImage.TYPE_4BYTE_ABGR);
+		Graphics2D g = (Graphics2D) toWriteTo.getGraphics();
+		for(int i = 0; i < img.getWidth(null); i++)	{
+			g.drawImage(img, i, 0, i+1, img.getHeight(null), img.getWidth(null) - 1 - i, 0, img.getWidth(null) - i, img.getHeight(null), null);
+		}
+		return toWriteTo;
+	}
+	
 }

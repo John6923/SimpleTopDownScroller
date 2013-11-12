@@ -19,6 +19,22 @@ public abstract class Collision extends Input {
 		xvel -= leftArrow ? 1 : 0;
 		yvel += downArrow ? 1 : 0;
 		yvel -= upArrow ? 1 : 0;
+		switch(yvel){
+		case 1:
+			player.setDirection(Constants.DOWN);
+			break;
+		case -1:
+			player.setDirection(Constants.UP);
+			break;
+		}
+		switch(xvel){
+		case 1:
+			player.setDirection(Constants.RIGHT);
+			break;
+		case -1:
+			player.setDirection(Constants.LEFT);
+			break;
+		}
 		bump(player.getX() + xvel, player.getY() + yvel);
 		if(isOpen(player.getX() + xvel, player.getY())){
 			player.addX(xvel);
@@ -82,9 +98,12 @@ public abstract class Collision extends Input {
 	private void bumpDragon() {
 		if(player.hasSword()){
 			removeDragon();
+			dialogue = Dialogue.DRAGON_SLAIN;
+		}
+		else{
+			dialogue = Dialogue.DRAGON;
 		}
 		dialogueTimeout = Constants.DIALOGUE_TIMEOUT;
-		dialogue = Dialogue.DRAGON;
 		customDialogue = true;
 		
 	}
@@ -98,9 +117,12 @@ public abstract class Collision extends Input {
 	private void bumpDoor() {
 		if(player.hasKey()){
 			removeDoor();
+			dialogue = Dialogue.DOOR_OPENED;
+		}
+		else {
+			dialogue = Dialogue.DOOR;
 		}
 		dialogueTimeout = Constants.DIALOGUE_TIMEOUT;
-		dialogue = Dialogue.DOOR;
 		customDialogue = true;
 	}
 

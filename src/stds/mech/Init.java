@@ -6,7 +6,6 @@ import java.util.Scanner;
 import javax.swing.Timer;
 
 import stds.constants.Constants;
-import stds.gfx.Dialogue;
 import stds.gfx.GFX;
 
 @SuppressWarnings("serial")
@@ -21,7 +20,6 @@ public abstract class Init extends Collision {
 		timer = new Timer(Constants.TIMER, this);
 		initArray();
 		initPictures();
-		Dialogue.init();
 		gameStage = 0;
 	}
 	
@@ -36,6 +34,7 @@ public abstract class Init extends Collision {
 	}
 	
 	private void initPictures(){
+		hero[1] = GFX.reverseImage(hero[0]);
 		ground[0] = GFX.getImage(Constants.IMAGE_NAMES[0]);
 		ground[1] = GFX.getImage(Constants.IMAGE_NAMES[1]);
 		for(int i = 0; i < 5; i++){

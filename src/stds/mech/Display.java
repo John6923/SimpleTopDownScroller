@@ -23,7 +23,7 @@ public abstract class Display extends Variables {
 					g2.drawImage(getTerrain(j - 2 + player.getX(), i - 2 + player.getY() ), j* Constants.PANEL_DIMENSION, i * Constants.PANEL_DIMENSION, Constants.PANEL_DIMENSION, Constants.PANEL_DIMENSION, null);
 				}
 			}
-			g2.drawImage(hero, (Constants.APPLET_WIDTH - Constants.PANEL_DIMENSION) / 2, (Constants.APPLET_WIDTH - Constants.PANEL_DIMENSION) / 2, Constants.PANEL_DIMENSION, Constants.PANEL_DIMENSION, null);
+			g2.drawImage(hero[player.getDirection()], (Constants.APPLET_WIDTH - Constants.PANEL_DIMENSION) / 2, (Constants.APPLET_WIDTH - Constants.PANEL_DIMENSION) / 2, Constants.PANEL_DIMENSION, Constants.PANEL_DIMENSION, null);
 			dialogue();
 			g2.drawImage(Dialogue.get(dialogue), 0, Constants.APPLET_WIDTH, null);
 			g2.dispose();

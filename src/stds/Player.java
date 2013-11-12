@@ -8,6 +8,7 @@ public class Player {
 	private double x = Constants.PLAYER_X;
 	private boolean sword = false;
 	private boolean key = false;
+	private int direction = Constants.LEFT;
 	
 	public int getX(){
 		return (int)x;
@@ -39,6 +40,14 @@ public class Player {
 	
 	public void getKey(){
 		key = true;
+	}
+
+	public int getDirection() {
+		return direction;
+	}
+
+	public void setDirection(int direction) {
+		this.direction = direction;
 	}
 
 }

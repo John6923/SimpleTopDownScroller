@@ -25,7 +25,7 @@ public abstract class Variables extends JPanel implements ActionListener {
 	protected boolean rightArrow = false;
 	
 	protected final Image[] ground = new Image[22];
-	protected final Image hero = GFX.getImage(Constants.PLAYER);
+	protected final Image[] hero = {GFX.getImage(Constants.PLAYER), null, GFX.getImage(Constants.PLAYER_BACK), GFX.getImage(Constants.PLAYER_FRONT)};
 	
 	protected Player player = new Player();
 	
